@@ -26,8 +26,8 @@ async function insertServicio(obj) {
     }//cierra catch
 }//cierra insert
 
-
-async function getServiciosById(id) {
+//datos para modificar un profesional
+async function getServicioById(id) {
     var query = "select * from servicios where id=? ";
     var rows = await pool.query(query, [id]);
     return rows[0];
@@ -48,4 +48,4 @@ async function modificarServicioById(obj, id) {
     
 
 
-module.exports = { getServicios, deleteServiciosById, modificarServicioById, insertServicio, getServiciosById}
+module.exports = { getServicios, deleteServiciosById, insertServicio, getServicioById, modificarServicioById}

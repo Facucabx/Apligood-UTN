@@ -3,7 +3,7 @@
         <div class="col-6 offset-3">
             <h4>Agregar un nuevo profesional</h4>
             <br>
-            <form action="/admin/servicios/agregar" method="post" enctype="multipart/form-data">
+            <form action="/admin/servicios/agregar" method="post" >
                 <div class="form-group">
 
                     <input type="text" class="form-control" placeholder="Apellido y nombre" name="usuarios">
@@ -12,10 +12,7 @@
                 <div class="form-group">
                     <textarea type="text" class="form-control" name="cargo" placeholder="Cargo"></textarea>
                 </div>
-                {{!-- <br>
-                <div class="form-group">
-                    <label>Imagen: <input type="file" class="form-control" name="imagen" id="imagen"> </label>
-                </div> --}}
+
                 <br>
                 <div class="form-group">
                     <textarea type="text" class="form-control" name="info" placeholder="Info"></textarea>

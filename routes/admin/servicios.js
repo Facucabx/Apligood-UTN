@@ -63,7 +63,8 @@ router.post('/agregar', async (req, res, next) => {
 
 router.get('/modificar/:id', async (req, res, next) => {
     var id = req.params.id;
-    var servicio = await serviciosModel.getServiciosById(id);
+    
+    var servicio = await serviciosModel.getServicioById(id);
     res.render('admin/modificar', {
         layout: 'admin/layout',
         servicio
@@ -74,7 +75,7 @@ router.get('/modificar/:id', async (req, res, next) => {
 //ACTUALIZAR LA NOVEDAD//
 router.post('/modificar', async (req, res, next) => {
     try {
-      // console.log(req.body.id); para ver el id
+      console.log(req.body.id); //para ver el id
       var obj = {
         usuarios: req.body.usuarios,
         cargo: req.body.cargo,
