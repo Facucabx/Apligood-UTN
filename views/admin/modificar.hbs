@@ -1,0 +1,41 @@
+<div class="container" style="margin: 100px auto;">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar profesional</h4>
+            <br>
+            <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{servicio.id}}" name="id">
+                <div class="form-group">
+                    <label for="">Apellido y nombre</label>
+                    <input type="text" class="form-control" name="usuarios" value="{{servicio.usuarios}}">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Cargo</label>
+                    <input type="text" class="form-control" name="cargo" value="{{servicio.cargo}}">
+                </div>
+                <br>
+                {{!-- <div class="form-group">
+                    <p>
+                        <label>Imagen: <input type="file" name="imagen" id="imagen"> </label>
+                    </p>
+                    <p>
+                        <label> <input type="checkbox" name="img_delete" id="img_delete" value="1">
+                            Eliminar imagen actual? </label>
+                        <input type="hidden" name="img_original" value="{{servicio.img_id}}">
+
+                    </p>
+                </div> --}}
+                <div class="form-group">
+                    <label for="">Información</label>
+                    <textarea class="form-control" name="info">{{servicio.info}}</textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

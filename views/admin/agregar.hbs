@@ -1,0 +1,32 @@
+<div class="container" style="margin: 100px auto;">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Agregar un nuevo profesional</h4>
+            <br>
+            <form action="/admin/servicios/agregar" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" placeholder="Apellido y nombre" name="usuarios">
+                </div>
+                <br>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" name="cargo" placeholder="Cargo"></textarea>
+                </div>
+                {{!-- <br>
+                <div class="form-group">
+                    <label>Imagen: <input type="file" class="form-control" name="imagen" id="imagen"> </label>
+                </div> --}}
+                <br>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" name="info" placeholder="Info"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+
+        </div>
+    </div>
+</div>
