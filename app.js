@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 require('dotenv').config();
 var session = require('express-session');
+var fileUpload = require('express-fileupload');
 var pool = require('./models/bd');
 
 var indexRouter = require('./routes/index');
@@ -45,6 +46,11 @@ secured = async (req, res, next) => {
   }
 }
 
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}))
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
@@ -54,7 +60,7 @@ app.use('/admin/servicios', secured, adminRouter);
 //select
 
 pool.query('select * from usuarios').then(function (resultados) {
-  console.log(resultados)
+  // console.log(resultados)
 });
 
 
