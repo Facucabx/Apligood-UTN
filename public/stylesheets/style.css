@@ -1,8 +1,33 @@
 body {
-  padding: 50px;
+  padding-top: 70px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
 }
 
-a {
-  color: #00B7FF;
+.hero {
+  background: url(../images/header.jpg);
+  background-size: cover;
+  height: 0.5vh;
+  min-height: 300px;
+  color: white;
+}
+.staff{
+  background-color: rgb(230, 230, 230);
+  color: rgb(0, 0, 0);
+}
+.nosotros{
+  background-color: rgb(211, 211, 211);
+  color: rgb(0, 0, 0);
+}
+#conocemos{
+  background-color: rgb(51, 51, 51);
+  color: white;
+}
+footer{
+  background-color: black;
+  color: white;
+}
+.mapa iframe{
+  width: 95%;
+  aspect-ratio: 1.5;
 }

@@ -44,8 +44,12 @@ async function modificarServicioById(obj, id) {
     }
 }//cierra modi update
 
-
+async function buscarServicios(busqueda) {
+    var query = "select * from servicios where usuarios like ? OR cargo like ? OR info like ?"; 
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
+    return rows;
+}
     
 
 
-module.exports = { getServicios, deleteServiciosById, insertServicio, getServicioById, modificarServicioById}
+module.exports = { getServicios, deleteServiciosById, insertServicio, getServicioById, modificarServicioById, buscarServicios}

@@ -10,7 +10,14 @@ const destroy = util.promisify(cloudinary.uploader.destroy);
 //GET listar servicios page//
 router.get('/', async function (req, res, next) {
 
-    var servicios = await serviciosModel.getServicios();
+    // var servicios = await serviciosModel.getServicios();
+
+    var servicios
+    if (req.query.q === undefined) {
+        servicios = await serviciosModel.getServicios();
+    } else {
+        servicios = await serviciosModel.buscarServicios(req.query.q);
+    }
 
     servicios = servicios.map(servicio => {
         if (servicio.img_id) {
@@ -34,7 +41,9 @@ router.get('/', async function (req, res, next) {
     res.render('admin/servicios', {
         layout: 'admin/layout',
         persona: req.session.nombre,
-        servicios
+        servicios,
+        is_search: req.query.q !== undefined,
+        q: req.query.q
     });
 });
 

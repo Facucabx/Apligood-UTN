@@ -1,35 +1,109 @@
 <div class="container-fluid">
-    <div id="home" class="row align-items-center hero scroll_section">
+    <div id="home" class="row align-items-center hero">
         <div class="col-lg-3 offset-lg-2">
-            <p>Bajada</p>
-            <h1>Titulo Principal</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt tempora reiciendis minima ipsa libero.
-            </p>
+            <h1>Encontramos los mejores expertos para ayudarte</h1>
+            <p>Nuestro sitio cuenta con expertos en todos los servicios que puedas necesitar, con precios competitivos y
+                fácil de usar. </p>
+            <p> ¡Encuentra al profesional perfecto hoy mismo!</p>
         </div>
     </div>
 </div>
-<div id="nosotros" class="row align-items-stretch my-3 staff py-4 scroll_section">
+<div id="servicios" class="row align-items-stretch  staff py-5 scroll_section">
     <div class="col-lg-8 offset-lg-2">
-        <h2>Nuestros profesionales</h2>
+        <h2>Selecciona al profesional que necesites</h2>
         <div class="row row-cols-1 row-cols-md-4 g-4">
             {{#each servicios}}
             <div class="col">
-                
+
                 <div class="card">
-                    
+
                     <img src="{{imagen}}" class="card-img.top" alt="">
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">{{usuarios}}</h5>
-                        <p class="card-text">{{cargo}}</p>
+                        <h6 class="card-text">{{cargo}}</h6>
                         <p class="card-text">{{info}}</p>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
             {{/each}}
         </div>
     </div>
 </div><!-- Fin nosotros -->
+<div id="nosotros" class="row py-5 nosotros"><!--Inicio Conocenos-->
+    <div class="col-lg-8 offset-lg-2 ">
+        <h2>Nosotros</h2>
+        <p>
+            En 2010, un grupo de amigos se unió con una visión clara: crear un sitio web que conectara a las personas
+            con los profesionales que necesitan, independientemente de su ubicación o tipo de servicio. Así nació
+            nuestro sitio, con una misión de hacer que la búsqueda de servicios sea más fácil y accesible para todos.
+        </p>
+
+        <p> Desde entonces, hemos estado trabajando duro para construir una plataforma que sea intuitiva y fácil de
+            usar, y
+            para reunir a una comunidad de profesionales talentosos y comprometidos en todas las áreas de servicios.
+            Hoy,
+            nuestro sitio cuenta con una amplia variedad de profesionales, desde electricistas hasta abogados y
+            diseñadores
+            gráficos, que ofrecen servicios de alta calidad a precios competitivos.</p>
+
+        <p>Nos sentimos orgullosos de haber ayudado a miles de personas a encontrar al profesional perfecto para sus
+            necesidades, y esperamos seguir haciendo lo mismo por muchos años más. Si estás buscando servicios de
+            cualquier
+            tipo, estamos aquí para ayudarte a conectarte con los mejores profesionales en tu área. ¡Explora nuestros
+            servicios hoy mismo y descubre cómo podemos ayudarte a lograr tus objetivos!
+        </p>
+
+    </div>
+</div> <!-- fin id conocenos -->
+
+<div id="conocemos" class="row py-5"><!--Inicio Conocenos-->
+    <div class="col-md-4 offset-md-2">
+        <h2>Visitanos</h2>
+        <p>Nos encontramos en:</p>
+        <p>Av. Medrano 951 - Buenos Aires, Argentina.</p>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2274316740563!2d-58.422590523470035!3d-34.598410057219255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb666703c59f%3A0x6f9fd2b57bacdcac!2s%C3%81rea%20de%20Desarrollo%20Profesional%20-%20Pasant%C3%ADas!5e0!3m2!1ses-419!2sar!4v1672630407898!5m2!1ses-419!2sar"></iframe>
+        </div>
+    </div> <!-- fin id vesitanos -->
+
+    <!--Inicio contacto-->
+    <div id="contacto" class="col-md-4 mt-4 mt-sm-0">
+        <h2>Contactanos</h2>
+                <p>¿Tienes alguna pregunta o sugerencia sobre nuestros servicios? ¡Nos encantaría saber de vos! Por favor, no
+            dudes en ponerte en contacto con nosotros a través de nuestro formulario de contacto en el sitio web.</p>
+        <p> Nuestro equipo estará encantado de responder cualquier pregunta que puedas tener y ayudarte en lo que
+            necesites. ¡Esperamos saber de ti pronto!</p>
+        <form class="row g-3" action="/" method="post">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="col-md-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="ejemplo@email.com" name="email">
+            </div>
+            <div class="col-12">
+                <label for="tel" class="form-label">Tel</label>
+                <input type="text" class="form-control" id="tel" placeholder="..." name="tel">
+            </div>
+            <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="3" name="mensaje">
+                          </textarea>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+        <p>{{message}}</p>
+    </div> <!--Fin contacto-->
+</div> <!--Fin conocenos-->

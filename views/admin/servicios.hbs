@@ -1,27 +1,30 @@
 <div class="container" style="margin-top:100px;">
-    {{!-- fila 1 --}}
+    {{!-- inicio fila 2 --}}
     <div class="row">
-        <div class="col">
-            <h5 style="float:right;">
-                <span> Bienvenido {{persona}}!</span>
-                <a href="/admin/login/logout/" class="btn btn-danger"> Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a>
-            </h5>
+        <div class="col-7" style="margin-top:-9px ;">
+            <h2>Listado de profesionales</h2>
         </div>
 
-    </div>
-{{!-- FIN FILA 1 --}}
-    {{!-- inicio fila 2 --}}
-    <a style="float:right;" href="/admin/servicios/agregar" class="btn btn-success"><i class="fas fa-plus"></i> Nuevo </a>
-    <div class="row">
-        <div class="col">
-            <h3>Listado de profesionales</h3>
+
+        <div class="col-3 text-right">
+            <form class="d-flex" action="/admin/servicios" method="get">
+                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}}
+                    value="{{q}}" {{/if}}>
+                <button class="btn btn-outline-success" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+        <div class="col-2 text-right">
+            <a href="/admin/servicios/agregar" class="btn btn-success"><i class="fas  fa-plus"></i> Agregar
+                Profesional</a>
         </div>
     </div> {{!Fin fila}}
 
     {{!-- inicio fila 3 --}}
-       {{!-- fila 3 --}}
+    {{!-- fila 3 --}}
     <div class="row">
-        <div class="col">
+        <div class="col" style="margin-top:35px ;">
             <table class="table">
                 <thead class="">
                     <tr class="table-dark">
@@ -36,11 +39,11 @@
                     {{#each servicios}}
                     <tr>
                         <th scope="row">{{id}}</th>
-                        
+
                         <td>{{{imagen}}} {{usuarios}}</td>
                         <td>{{cargo}}</td>
                         <td>{{info}}</td>
-                        
+
                         <td class="text-right">
                             <a href="/admin/servicios/modificar/{{id}}" class="btn btn-secondary"><i
                                     class="fas fa-pencil-alt"></i> </a>
@@ -50,7 +53,14 @@
                     </tr>
                     {{/each}}
                 </tbody>
+
             </table>
+            {{#if is_search}}
+                {{#unless servicios.length}}
+                 No se encontraron resultados para "<b>{{q}}</b>"
+                {{/unless}}
+            {{/if}}
+
         </div>
     </div> {{!-- fin fila 3 --}}
 
