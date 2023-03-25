@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 22-03-2023 a las 05:52:58
+-- Tiempo de generación: 25-03-2023 a las 18:45:19
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.0.26
 
@@ -32,18 +32,24 @@ CREATE TABLE IF NOT EXISTS `servicios` (
   `id` int NOT NULL AUTO_INCREMENT,
   `usuarios` varchar(200) NOT NULL,
   `cargo` varchar(200) NOT NULL,
-  `imagen` varchar(200) NOT NULL,
+  `img_id` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `info` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Volcado de datos para la tabla `servicios`
 --
 
-INSERT INTO `servicios` (`id`, `usuarios`, `cargo`, `imagen`, `info`) VALUES
-(6, 'Marcos Gutierrez', 'Programador', '', 'Telefono: 3364626278'),
-(7, 'Roberto Gimenez', 'Pintor', '', 'Telefono: 33415455555');
+INSERT INTO `servicios` (`id`, `usuarios`, `cargo`, `img_id`, `info`) VALUES
+(6, 'Marcos Gutierrez', 'Programador', 'jywwicd3ir0aapnf2s5k', 'Telefono: 3364626278'),
+(15, 'Lionel Montes', 'Contador', 'ceyawszvahd12va5jx2m', 'Telefono: 114578126'),
+(14, 'Sofia Williams', 'Community manager', 'd6xpcwgln6uv0nbzcbzb', 'Instagram: @Sofiwilliams'),
+(12, 'Nicolas Ramirez', 'Abogado', 'sblzgrjdnhuajxjfr1ly', 'Teléfono: 118844662\r\nEmail: Nico@abogado.com\r\nSitio: www.abogado.com'),
+(13, 'Romina Arias Muñoz', 'Arquitecta', 'phnayqiucnjxmxpyrnhx', 'Sitio web: www.arquitectos.com'),
+(16, 'Gonzalo Gutierrez', 'Cortador de cesped', 'yohucybgm4izfdojgvmf', 'Telefono: 341556692'),
+(17, 'Julio Gomez', 'Electricista/Cerrajero', 'ir5yhf7y9hkipjbbgb2u', 'Teléfono: 119966334'),
+(18, 'Juana Gimenez', 'Psicóloga', 'ruldssdfrqbi3xwppos2', 'Teléfono: 113322997');
 
 -- --------------------------------------------------------
 
