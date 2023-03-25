@@ -63,4 +63,42 @@ router.post('/', async (req, res, next) => {
   });
 });
 
+
+router.get('/', async function (req, res, next) {
+  var servicios
+  if (req.query.q === undefined) {
+      servicios = await serviciosModel.getServicios();
+  } else {
+      servicios = await serviciosModel.buscarServicios(req.query.q);
+  }
+
+  servicios = servicios.map(servicio => {
+      if (servicio.img_id) {
+          const imagen = cloudinary.image(servicio.img_id, {
+              width: 50,
+              height: 50,
+              crop: 'fill'
+          });
+          return {
+              ...servicio,//usuarios, cargo e info
+              imagen//img
+          }
+      } else {
+          return {
+              ...servicio,//usuarios, cargo e info
+              imagen: ''//nada
+          }
+      }
+  })
+
+  res.render('index', {
+      layout: 'admin/layout',
+      persona: req.session.nombre,
+      servicios,
+      is_search: req.query.q !== undefined,
+      q: req.query.q
+  });
+});
+
+
 module.exports = router;

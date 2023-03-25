@@ -31,3 +31,7 @@ footer{
   width: 95%;
   aspect-ratio: 1.5;
 }
+.profesionales{
+  text-decoration: none;
+  color: black;
+}
