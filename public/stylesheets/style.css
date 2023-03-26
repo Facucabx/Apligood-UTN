@@ -15,9 +15,10 @@ body {
   background-color: rgb(230, 230, 230);
   color: rgb(0, 0, 0);
 }
-.nosotros{
+.nosotros {
   background-color: rgb(211, 211, 211);
   color: rgb(0, 0, 0);
+  font-size: 18px;
 }
 #conocemos{
   background-color: rgb(51, 51, 51);
@@ -25,7 +26,8 @@ body {
 }
 footer{
   background-color: black;
-  color: white;
+  color: rgb(143, 143, 143);
+  font-size: 11px;
 }
 .mapa iframe{
   width: 95%;

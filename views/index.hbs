@@ -1,17 +1,17 @@
 <div class="container-fluid">
     <div id="home" class="row align-items-center hero">
-        <div class="col-lg-3 offset-lg-2">
-            <h1>Encontramos los mejores expertos para ayudarte</h1>
-            <p>Nuestro sitio cuenta con expertos en todos los servicios que puedas necesitar, con precios competitivos y
-                fácil de usar. </p>
-            <p> ¡Encuentra al profesional perfecto hoy mismo!</p>
+        <div class="col-lg-5 offset-lg-2">
+            <h1><b>Los mejores expertos para ayudarte</b></h1>
+            <h5>Nuestro sitio cuenta con expertos en todos los servicios que puedas necesitar, con precios competitivos y
+                fácil de usar. </h5>
+            <p> <b> ¡Encuentra al profesional perfecto hoy mismo!</b></p>
         </div>
     </div>
 </div>
-<div id="servicios" class="row align-items-stretch  staff py-5 scroll_section">
+<div id="servicios" class="row align-items-stretch staff py-5 scroll_section">
     <div class="col-lg-8 offset-lg-2">
         <h2>Selecciona al profesional que necesites</h2>
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
             {{#each servicios}}
             <div class="col">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}" class="profesionales">
@@ -19,7 +19,7 @@
                         <img src="{{imagen}}" class="card-img.top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{usuarios}}</h5>
-                            <h6 class="card-text">{{cargo}}</h6>
+                            <h6 class="card-text"> <b> {{cargo}} </b></h6>
                             <p class="card-text">{{info}}</p>
                         </div>
 
@@ -50,7 +50,7 @@
                 <img src="{{imagen}}">
                 <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
                     <div class="container-fluid">
-                        
+
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
@@ -63,7 +63,8 @@
                                     <a class="nav-link active" href="#"><b>Reseñas</b></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#"> <button type="button" class="btn btn-primary"><b> Contratar</b></button></a>
+                                    <a class="nav-link active" href="#"> <button type="button"
+                                            class="btn btn-primary"><b> Contratar</b></button></a>
                                 </li>
                             </ul>
                         </div>
@@ -81,7 +82,7 @@
 
 <div id="nosotros" class="row py-5 nosotros"><!--Inicio Conocenos-->
     <div class="col-lg-8 offset-lg-2 ">
-        <h2>Nosotros</h2>
+        <h2 class="py-3">Nosotros</h2>
         <p>
             En 2010, un grupo de amigos se unió con una visión clara: crear un sitio web que conectara a las personas
             con los profesionales que necesitan, independientemente de su ubicación o tipo de servicio. Así nació
