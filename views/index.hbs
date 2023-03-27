@@ -2,7 +2,8 @@
     <div id="home" class="row align-items-center hero">
         <div class="col-lg-5 offset-lg-2">
             <h1><b>Los mejores expertos para ayudarte</b></h1>
-            <h5>Nuestro sitio cuenta con expertos en todos los servicios que puedas necesitar, con precios competitivos y
+            <h5>Nuestro sitio cuenta con expertos en todos los servicios que puedas necesitar, con precios competitivos
+                y
                 fácil de usar. </h5>
             <p> <b> ¡Encuentra al profesional perfecto hoy mismo!</b></p>
         </div>
@@ -14,7 +15,7 @@
         <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
             {{#each servicios}}
             <div class="col">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}" class="profesionales">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}" name="q" class="profesionales">
                     <div class="card">
                         <img src="{{imagen}}" class="card-img.top" alt="">
                         <div class="card-body">
@@ -144,8 +145,9 @@
             </div>
             <div class="col-12">
                 <label for="mensaje" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="mensaje" rows="3" name="mensaje">
-                          </textarea>
+                <div style="height: 100px; overflow-y: scroll;">
+                    <textarea class="form-control" id="mensaje" rows="3" name="mensaje"></textarea>
+                </div>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Enviar</button>
