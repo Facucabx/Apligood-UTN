@@ -2,35 +2,13 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 var serviciosModel = require('../models/serviciosModel');
+var util = require('util');
 var cloudinary = require('cloudinary').v2;
 
 /* GET home page. */
-router.get('/', async function (req, res, next) {
-  
-  var servicios = await serviciosModel.getServicios();
 
-  servicios = servicios.splice(0, 8); // seleccionar los primeros 5 dek array
-  servicios = servicios.map(servicio => {
-    if (servicio.img_id) {
-      const imagen = cloudinary.url(servicio.img_id, {
-        width: 460,
-        crop: 'fill'
-      });
-      return {
-        ...servicio,
-        imagen
-      }
-    } else {
-      return {
-        ...servicio,
-        imagen: '/images/noimage.jpg'
-      }
-    }
-  });
-  res.render('index', {
-    servicios
-  });
-});
+
+
 
 
 router.post('/', async (req, res, next) => {
@@ -65,38 +43,42 @@ router.post('/', async (req, res, next) => {
 
 
 router.get('/', async function (req, res, next) {
-  var servicios
+
+  var servicios //= await serviciosModel.getServicios();
+
+  // servicios = servicios.splice(0, 8); // seleccionar los primeros  dek array
+
   if (req.query.q === undefined) {
-      servicios = await serviciosModel.getServicios();
+    servicios = await serviciosModel.getServicios();
   } else {
-      servicios = await serviciosModel.buscarServicios(req.query.q);
+    servicios = await serviciosModel.buscarServicios(req.query.q);
   }
 
   servicios = servicios.map(servicio => {
-      if (servicio.img_id) {
-          const imagen = cloudinary.image(servicio.img_id, {
-              width: 50,
-              height: 50,
-              crop: 'fill'
-          });
-          return {
-              ...servicio,//usuarios, cargo e info
-              imagen//img
-          }
-      } else {
-          return {
-              ...servicio,//usuarios, cargo e info
-              imagen: ''//nada
-          }
+    if (servicio.img_id) {
+      const imagen = cloudinary.image(servicio.img_id, {
+        width: 295,
+        height: 205,
+        crop: 'fill'
+      });
+      return {
+        ...servicio,//usuarios, cargo e info
+        imagen//img
       }
+    } else {
+      return {
+        ...servicio,//usuarios, cargo e info
+        imagen: ''//nada
+      }
+    }
   })
 
   res.render('index', {
-      layout: 'admin/layout',
-      persona: req.session.nombre,
-      servicios,
-      is_search: req.query.q !== undefined,
-      q: req.query.q
+    layout: 'layout',
+    persona: req.session.nombre,
+    servicios,
+    is_search: req.query.q !== undefined,
+    q: req.query.q
   });
 });
 

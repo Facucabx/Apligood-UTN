@@ -14,20 +14,18 @@
         <h2>Selecciona al profesional que necesites</h2>
         <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
             {{#each servicios}}
-            <div class="col">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}" name="q" class="profesionales">
-                    <div class="card">
-                        <img src="{{imagen}}" class="card-img.top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">{{usuarios}}</h5>
-                            <h6 class="card-text"> <b> {{cargo}} </b></h6>
-                            <p class="card-text">{{info}}</p>
+                <div class="col">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}" name="q" class="profesionales">
+                        <div class="card">
+                            <div>{{{imagen}}}</div> 
+                            <div class="card-body">
+                                <h5 class="card-title">{{usuarios}}</h5>
+                                <h6 class="card-text"> <b> {{cargo}} </b></h6>
+                                <p class="card-text">{{info}}</p>
+                            </div>
                         </div>
-
-                    </div>
-                </a>
-
-            </div>
+                    </a>
+                </div>
             {{/each}}
             {{#if is_search}}
             {{#unless servicios.length}}
@@ -47,33 +45,31 @@
                 <h2 class="modal-title" id="exampleModalLabel">{{usuarios}}</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <img src="{{imagen}}">
-                <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-                    <div class="container-fluid">
-
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#"><b> Mensajes </b></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#"> <b>Información</b></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#"><b>Reseñas</b></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#"> <button type="button"
-                                            class="btn btn-primary"><b> Contratar</b></button></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <h4>{{cargo}}</h4>
-                <p> {{info}}</p>
-            </div>
+<div class="modal-body">
+   <div style="text-align:center;"> {{{imagen}}}</div>
+   <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><b> Mensajes </b></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link active" href="#"> <b>Información</b></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link active" href="#"><b>Reseñas</b></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link active" href="#"> <button type="button" class="btn btn-primary"><b> Contratar</b></button></a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <h4>{{cargo}}</h4>
+   <p> {{info}}</p>
+</div>
 
 
         </div>
